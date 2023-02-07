@@ -3,6 +3,7 @@
 * {
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
+    vertical-align: top;
 }
 
 body {
@@ -24,6 +25,8 @@ img, figure {
     margin-inline-end: 0;
 }
 
+a { text-decoration: none;}
+
 /*Page*/
 
 body {
@@ -34,12 +37,10 @@ main, header, footer{
     max-width: 1150px;
     margin: 0 auto;
 }
-
-/****responsive***/
-
-header, footer, .nav, section aside {
-    background: rgba(14, 172, 224, 0.915);
+header, .nav, section aside {
+    background: rgba(41, 181, 228, 0.915);
 }
+
 
 /*Header*/
 header {
@@ -73,47 +74,130 @@ header {
 section {
    background-color: #fff;
    display: flex;
-   justify-content: space-around;
+   justify-content: space-between;
    padding: 2rem .8rem;
 }
 
 /*space distribution*/
 
-section .nav, section aside {
-    width: 220px;
+section .nav {
+    width: 200px;
     height: fit-content;
 }
 
-section article {
-    width: 50%;
+section .articles {
+    width: 60%;
+}
+
+section aside {
+    width: 250px;
+    height: fit-content;
+    
 }
 
 /******* responsive ! ****/
 
+@media  (max-width: 970px ) {
+    section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: .5rem;
+     }
+
+    section .nav, section .articles, section aside {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+}
+
 /*nav*/
 
-section .nav ul {
+.nav ul {
     width: 100%;
 }
 
-section .nav ul li {
+.nav ul li {
     width: 100%;
-    padding: 0.5em;
+    padding: .7rem 0;
     text-align: center;
 }
 
-section .nav ul li:hover{
-    background-color: blue;
+.nav ul li:hover{
+    background-color: rgba(13, 119, 154, 0.915);
 }
 
-section .nav ul li a{
+.nav ul li a{
     text-align: center !important;
     font-size: 1rem;
     color: #fff;
+    text-decoration: underline;
     font-weight: bold;
 }
 
 /*articles*/
+
+.articles {
+    padding: 0.7rem;
+}
+
+.articles h1{
+    font-size: 2rem;
+    color:rgb(247, 210, 0);
+    font-weight: bolder;
+    margin: 1.2rem 0;
+}
+
+.articles p {
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+/*aside biography*/
+
+.biography {
+    color: #fff;
+    padding: 1rem 0;
+}
+
+.biography figure {
+    width: 70%;
+    margin: auto;
+}
+
+.biography figure img {
+    width: 100%;
+    border: #fff 2px solid;
+}
+
+.biography figure figcaption h3 {
+    font-size: 1.2rem;
+    text-align: center;
+    font-weight: bolder;
+    margin: 0.7rem 0;
+}
+
+.biography p {
+    margin: 0.2rem 0 0;
+    padding: 0 0.7rem;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+/*footer*/
+
+footer {
+    background: rgba(13, 119, 154, 0.915);
+    padding: .7rem 0;
+}
+
+footer> p {
+    margin: 0;
+    font-size: 1rem;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+}
 
 
 
